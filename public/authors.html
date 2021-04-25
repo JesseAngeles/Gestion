@@ -11,6 +11,23 @@
 <body>
     <h1>Authors</h1>
 
+    <div>
+        <h1>Register new author</h1>
+        <input type="text" id="register_name" placeholder="Author name">
+        <br>
+        <input type="text" id="register_lastname" placeholder="Author lastname">
+        <br>
+        <button onclick="RegisterAuthor()">Register</button>
+    </div>
+
+    <table id="table_authors" border="1">
+        <tr id="headers">
+            <TH>NAME</TH>
+            <TH>LAST NAME</TH>
+            <TH>ACTION</TH>
+        </tr>
+    </table>
+
     <a href="./index.html">MainMenu</a>
 
     <script src="socket.io/socket.io.js"></script>
