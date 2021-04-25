@@ -26,8 +26,25 @@ io.on('connection', (client) => {
             if (err) {
                 return callback(false);
             }
-            return callback(null, res);
+            return callback(res);
         })
     })
 
+    client.on('author_delete', (data, callback) => {
+        author.DeleteAuthor(data, (err, res) => {
+            if (err) {
+                return callback(false);
+            }
+            return callback(res);
+        })
+    })
+
+    client.on('author_update', (data, callback) => {
+        author.UpdateAuthor(data.id, data.name, data.lastname, (err, res) => {
+            if (err) {
+                return callback(false);
+            }
+            return callback(res);
+        })
+    })
 });

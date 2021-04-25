@@ -55,7 +55,7 @@ class Authors {
     }
 
     //actualiza la información de un autor
-    UpdateAuthor(id_author, name, lastname) {
+    UpdateAuthor(id_author, name, lastname, callback) {
         let connection = new Connection();
         connection = connection.createTheConnection();
 
@@ -71,7 +71,7 @@ class Authors {
     }
 
     //Elimina a un autor de forma permanente
-    DeleteAuthor(id_author) {
+    DeleteAuthor(id_author, callback) {
         let connection = new Connection();
         connection = connection.createTheConnection();
 
