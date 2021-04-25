@@ -1,5 +1,5 @@
 const { io } = require('../server');
-const { Connection } = require('../DBConnection/Connection.');
+const { Connection } = require('../DBConnection/Connection.js');
 
 io.on('connection', (client) => {
 
@@ -15,28 +15,4 @@ io.on('connection', (client) => {
     client.on('disconnect', () => {
         console.log('Usuario desconectado');
     });
-
-    // Escuchar el cliente
-    client.on('enviarMensaje', (data, callback) => {
-
-        console.log(data);
-
-        client.broadcast.emit('enviarMensaje', data);
-
-
-        // if (mensaje.usuario) {
-        //     callback({
-        //         resp: 'TODO SALIO BIEN!'
-        //     });
-
-        // } else {
-        //     callback({
-        //         resp: 'TODO SALIO MAL!!!!!!!!'
-        //     });
-        // }
-
-
-
-    });
-
 });

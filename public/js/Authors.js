@@ -1,9 +1,12 @@
 var socket = io();
 
 socket.on('connect', function() {
-    console.log('Server Conection');
+    console.log('Conectado al servidor');
 });
 
+// escuchar
 socket.on('disconnect', function() {
-    console.log("Disconnected from the server");
+
+    console.log('Perdimos conexión con el servidor');
+
 });
