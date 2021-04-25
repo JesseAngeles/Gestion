@@ -1,10 +1,10 @@
 const { Connection } = require('./Connection.js');
 
-class Author {
+class Authors {
     constructor() {};
 
     //Crea un nuevo autor
-    CreateAuthor(name, lastname) {
+    CreateAuthor(name, lastname, callback) {
         let connection = new Connection();
         connection = connection.createTheConnection();
 
@@ -19,7 +19,7 @@ class Author {
     }
 
     //Obtiene la informacion de todos los autores
-    ReadAllAuthors() {
+    ReadAllAuthors(callback) {
         let connection = new Connection();
         connection = connection.createTheConnection();
 
@@ -55,7 +55,7 @@ class Author {
     }
 
     //actualiza la información de un autor
-    UpdateAuthor(id_author, name, lastname) {
+    UpdateAuthor(id_author, name, lastname, callback) {
         let connection = new Connection();
         connection = connection.createTheConnection();
 
@@ -71,7 +71,7 @@ class Author {
     }
 
     //Elimina a un autor de forma permanente
-    DeleteAuthor(id_author) {
+    DeleteAuthor(id_author, callback) {
         let connection = new Connection();
         connection = connection.createTheConnection();
 
@@ -85,4 +85,8 @@ class Author {
 
         connection.end();
     }
+}
+
+module.exports = {
+    Authors
 }
